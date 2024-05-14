@@ -27,8 +27,10 @@ app.post('/send-email', async (req, res) => {
         }
 
         const transporter = nodemailer.createTransport({
+            host: 'p3plzcpnl487217.prod.phx3.secureserver.net',
+            port: 465,
             auth: {
-                user: 'info@allstatehelpllc.com',
+                user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASSWORD
             }
         });
