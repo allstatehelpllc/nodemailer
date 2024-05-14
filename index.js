@@ -27,10 +27,8 @@ app.post('/send-email', async (req, res) => {
         }
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
-            host: 'smtp.gmail.com',
             auth: {
-                user: process.env.EMAIL_USER,
+                user: 'info@allstatehelpllc.com',
                 pass: process.env.EMAIL_PASSWORD
             }
         });
@@ -52,7 +50,7 @@ app.post('/send-email', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
